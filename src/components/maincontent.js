@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 function MainContent(props) {
     return (
@@ -8,5 +9,7 @@ function MainContent(props) {
     </maincontent>
     )
 }
-
+MainContent.PropTypes={
+    pageTitle : PropTypes.string
+}
 export default MainContent;
