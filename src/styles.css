@@ -39,3 +39,8 @@ img {
 mainContent{
     padding: 20px; 
 }
+
+#formContainer{
+    align-items: center;
+    padding: 25px; 
+}
