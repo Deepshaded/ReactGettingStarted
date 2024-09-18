@@ -9,7 +9,7 @@ function App() {
     <div>
       <Header>
       </Header>
-      <MainContent>
+      <MainContent pageTitle = {"Coding hackathon"}>
       </MainContent>
       <Footer/>
     </div>
