@@ -6,9 +6,24 @@ class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isloaded : false,
+            allInfo: [],
             title: this.props.pageTitle,
             count: this.props.numTopics
         }
+    }
+
+    componentDidMount(){
+        fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+        .then(res=>res.json())
+        .then((result)=>{
+            this.setState(
+                {
+                    allInfo : result.data
+                    
+                }
+            )
+        })
     }
 
     onClick = () => {
@@ -19,13 +34,11 @@ class MainContent extends Component {
 
         return (
             <div id="container">
-                <maincontent>
-                    This is the main content
-                    <h3>{this.state.title}</h3>
-                    <p>This is no of questions {this.state.count}</p>
-                    <button onClick={this.onClick}>Increase no of questions</button>                   
-                </maincontent>
-                <Aside/>
+               {this.state.allInfo.map(country=>(
+                <div>{country.Nation} in the year {country.Year} had population {country.Population}
+                </div>
+               ))
+               }
             </div>
         )
     }
