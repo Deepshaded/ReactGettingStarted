@@ -9,7 +9,7 @@ function App() {
     <div>
       <Header>
       </Header>
-      <MainContent pageTitle = {"Coding hackathon"}>
+      <MainContent pageTitle = {"Coding hackathon"} numTopics={5}>
       </MainContent>
       <Footer/>
     </div>
