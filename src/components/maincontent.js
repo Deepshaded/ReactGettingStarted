@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Aside from "./aside"
 
 class MainContent extends Component {
 
@@ -17,13 +18,15 @@ class MainContent extends Component {
     render() {
 
         return (
-            <maincontent>
-
-                This is the main content
-                <h3>{this.state.title}</h3>
-                <p>This is no of questions {this.state.count}</p>
-                <button onClick={this.onClick}>Increase no of questions</button>
-            </maincontent>
+            <div id="container">
+                <maincontent>
+                    This is the main content
+                    <h3>{this.state.title}</h3>
+                    <p>This is no of questions {this.state.count}</p>
+                    <button onClick={this.onClick}>Increase no of questions</button>                   
+                </maincontent>
+                <Aside/>
+            </div>
         )
     }
 }
